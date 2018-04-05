@@ -26,7 +26,7 @@ function addBook($book) {
 	$_SESSION["cart"][] = $book;
 }
 
-$book = getBook($id);
+$book = getBook($_GET["id"]);
 if (!isset($_SESSION["cart"]))
 	$_SESSION["cart"] = array();
 
