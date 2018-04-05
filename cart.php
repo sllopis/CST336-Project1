@@ -15,6 +15,7 @@ function getAuthor($book) {
 }
 
 function displayCart() {
+	print_r($_SESSION["cart"]);
 	echo "<table>";
 	echo "<tr><th>Cover</th><th>Title</th><th>Description</th><th>Author</th></tr>";
 	foreach ($_SESSION["cart"] as $book) {
