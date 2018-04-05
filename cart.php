@@ -16,7 +16,7 @@ function getAuthor($book) {
 
 function displayCart() {
 	echo "<table>";
-	echo "<tr><th>Cover</th><th>Title</th><Description</th><th>Author</th></tr>";
+	echo "<tr><th>Cover</th><th>Title</th><th>Description</th><th>Author</th></tr>";
 	foreach ($_SESSION["cart"] as $book) {
 		$img = $book["bookImage"];
 		$title = $book["bookTitle"];
