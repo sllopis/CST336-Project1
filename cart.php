@@ -31,8 +31,9 @@ function displayCart() {
 		echo "<td><h3>$title</h3></td>";
 		echo "<td>$desc</td>";
 		echo "<td>$authorName</td>";
-		echo "<td><form method='post'><input type='hidden' value='$id' name='changeQtyId'>" .
-			"<input type='text' name='quantity' value='$qty'><submit value='Update'></form></td>";
+		echo "<form method='post'><input type='hidden' value='$id' name='changeQtyId'>" .
+			 "<td><input type='text' name='quantity' value='$qty'></td>" .
+			 "<td><submit value='Update'></td></form>";
 		echo "<td><form method='post'><input type='hidden' value='$id' name='removeId'>" .
 			"<submit value='Remove'></form></td>";
 		echo "</tr>";
