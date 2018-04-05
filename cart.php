@@ -31,11 +31,11 @@ function displayCart() {
 		echo "<td><h3>$title</h3></td>";
 		echo "<td>$desc</td>";
 		echo "<td>$authorName</td>";
-		echo "<form method='post'><input type='hidden' value='$id' name='changeQtyId'>" .
+		echo "<form method='post' id='updateForm$id'><input type='hidden' value='$id' name='changeQtyId'>" .
 			 "<td><input type='text' name='quantity' value='$qty'></td>" .
-			 "<td><submit value='Update'></td></form>";
-		echo "<td><form method='post'><input type='hidden' value='$id' name='removeId'>" .
-			"<submit value='Remove'></form></td>";
+			 "<td><button type='submit' form='updateForm$id'>Update</button></td></form>";
+		echo "<form method='post' id='removeForm$id'><input type='hidden' value='$id' name='removeId'>" .
+			 "<td><button type='submit' form='removeForm$id'>Remove</button></td></form>";
 		echo "</tr>";
 	}
 	echo "</table>";
