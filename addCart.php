@@ -12,7 +12,7 @@ function getBook($id) {
 		WHERE bookID = :id";
 	$stmt = $conn->prepare($sql);
 	$stmt->execute(array(":id" => $id));
-	$book = $stmt->fetch(PDO::FETCH_ASSOC);
+	return $stmt->fetch(PDO::FETCH_ASSOC);
 }
 
 function addBook($book) {
