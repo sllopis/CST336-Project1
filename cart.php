@@ -15,12 +15,11 @@ function getAuthor($book) {
 }
 
 function displayCart() {
-	print_r($_SESSION["cart"]);
 	echo "<table>";
 	echo "<tr><th>Cover</th><th>Title</th><th>Description</th><th>Author</th></tr>";
 	foreach ($_SESSION["cart"] as $book) {
 		$img = $book["bookImage"];
-		$title = $book["bookTitle"];
+		$title = $book["bookName"];
 		$desc = $book["bookDescription"];
 		$author = getAuthor($book);
 		$authorName = $author["authorName"];
@@ -29,7 +28,7 @@ function displayCart() {
 		echo "<td><img src='$img'></td>";
 		echo "<td><h3>$title</h3></td>";
 		echo "<td>$desc</td>";
-		echo "<td>$author</td>";
+		echo "<td>$authorName</td>";
 		echo "</tr>";
 	}
 	echo "</table>";
