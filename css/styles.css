@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Merriweather');
+/* @import url('https://fonts.googleapis.com/css?family=Jua');*/
+head, body{
+    text-align:center;
+    
+}
+
+body {
+    background-color: green;
+    font-family: 'Merriweather', serif;
+    /*font-family: 'Jua', sans-serif;*/
+
+
+}
+
