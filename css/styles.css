@@ -13,3 +13,27 @@ body {
 
 }
 
+label{
+    font-size: 22px;
+    margin: 20px;
+    line-height: 200%;
+}
+
+img{
+   background-color: white;
+   width: 200px;
+}
+.desc{
+    background-color: white;
+}
+
+
+/*table h3{
+    background-color: yellow;
+    color: black;
+}*/
+
+mark{
+    background-color: yellow;
+    color: black;
+}
