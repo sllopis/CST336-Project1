@@ -18,7 +18,8 @@
         
         foreach ($records as $record) {
             
-            echo "<option value='".$record["authorID"]."' >" . $record["authorName"] . "</option>";
+            echo "<option " . ($_GET["bookAuthor"] == $record["authorID"] ? "selected" : "") .
+            " value='".$record["authorID"]."' >" . $record["authorName"] . "</option>";
             
         }
         
@@ -37,7 +38,8 @@
         
         foreach ($records as $record) {
             
-            echo "<option value='".$record["catId"]."' >" . $record["catName"] . "</option>";
+            echo "<option " . ($_GET["bookCategory"] == $record["catId"] ? "selected" : "") .
+             " value='".$record["catId"]."' >" . $record["catName"] . "</option>";
             
         }
         
@@ -143,7 +145,8 @@
         <form method="GET">
         
             <label for="bookName">Name: </label>
-            <input type="text" name="bookName" id="bookName" placeholder="Search Book Title">
+            <input type="text" name="bookName" id="bookName" placeholder="Search Book Title"
+                value="<?= $_GET["bookName"] ?>">
             
             <br>
                 
@@ -165,8 +168,10 @@
             </select>
              
              <p>Order by: </p>
-             <input type="radio" name="orderAsc" id = "asc" value = "asc"> <label> A-Z</label> <br>
-             <input type="radio" name="orderDesc" id = "desc" value = "desc"> <label> Z-A</label> <br>
+             <input <?= isset($_GET["orderAsc"]) ? "checked" : ""; ?> 
+                type="radio" name="orderAsc" id = "asc" value = "asc"> <label for="asc"> A-Z</label> <br>
+             <input <?= isset($_GET["orderDesc"]) ? "checked" : ""; ?> 
+                 type="radio" name="orderDesc" id = "desc" value = "desc"> <label for="desc"> Z-A</label> <br>
              <!--<input type="radio" name="orderBy" id = "cat" value = "cat"> <label> Category</label> <br>-->
 
               
