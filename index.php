@@ -95,7 +95,7 @@
                 
                 $sql .= " ORDER BY bookName " ;
                 
-                if($_GET["orderDesc"] == "desc") {
+                if($_GET["orderBy"] == "desc") {
                             $sql .= " DESC";
                         }
                 // echo "<h1> $sql </h1>"; //for debugging purposes
@@ -168,10 +168,10 @@
             </select>
              
              <p>Order by: </p>
-             <input <?= isset($_GET["orderAsc"]) ? "checked" : ""; ?> 
-                type="radio" name="orderAsc" id = "asc" value = "asc"> <label for="asc"> A-Z</label> <br>
-             <input <?= isset($_GET["orderDesc"]) ? "checked" : ""; ?> 
-                 type="radio" name="orderDesc" id = "desc" value = "desc"> <label for="desc"> Z-A</label> <br>
+             <input <?= isset($_GET["orderBy"] == "asc") ? "checked" : ""; ?> 
+                type="radio" name="orderBy" id = "asc" value = "asc"> <label for="asc"> A-Z</label> <br>
+             <input <?= isset($_GET["orderBy"] == "desc") ? "checked" : ""; ?> 
+                 type="radio" name="orderBy" id = "desc" value = "desc"> <label for="desc"> Z-A</label> <br>
              <!--<input type="radio" name="orderBy" id = "cat" value = "cat"> <label> Category</label> <br>-->
 
               
