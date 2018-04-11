@@ -108,8 +108,8 @@
             foreach ($records as $record) { 
                 //add category //add 
                 // <a href = "\information.php?bookId=1> </a>"?
-                 echo "<a href =\"information.php?bookId=" . $record["bookId"] . "\"> Info </a>";
-                 echo "<a href='addCart.php?bookId=" . $record["bookId"] . "'> Add to cart </a>";
+                 echo "<a href =\"information.php?bookId=" . $record["bookID"] . "\"> Info</a> ";
+                 echo "<a href='addCart.php?bookId=" . $record["bookID"] . "'>Add to cart </a>";
                  echo  "<strong>" . $record["authorName"] . " " . $record["bookName"] . ":</strong>" . " " . $record["bookDescription"] . "<br /> <br>";
             
             }
