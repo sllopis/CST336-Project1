@@ -58,23 +58,28 @@
             
             //$namedParameters = array();
             
-            $sql = "SELECT bookId, bookName, bookDescription FROM book "; //dont need WHERE 1?
-            
-            if(isset($_GET[])) {
+            // $sql = "SELECT * FROM book "; //dont need WHERE 1?
+            $sql = "SELECT * FROM book INNER JOIN author a ON book.authorID = a.authorID INNER JOIN category c ON book.categoryID = c.catID WHERE 1 ";
+            $catId = "";
+            $authorId = "";
+            if(!empty($_GET["bookAuthor"])) {
+                // $sql .= "INNER JOIN author a ON book.authorID = a.authorID ";
+                $authorId = $_GET["bookAuthor"];
+                $sql .= " AND book.authorID = $authorId ";
                 
             }
-            if(isset($_GET['sortBy'])) {
+            
+            if(!empty($_GET["bookCategory"])) {
+                // $sql .= "INNER JOIN category c ON book.categoryID = c.catID "; 
+                $catId = $_GET["bookCategory"];
+                $sql .= " AND categoryID = $catId";
                 
-                $sql = "SELECT authorName, bookId, bookName, bookDescription FROM book ";
-                //SELECT * FROM book INNER JOIN category ON book.categoryID = category.catID ORDER BY category.catName
-                //join the authorID to author table
-                if($_GET['orderBy'] == "author") {
-                    $sql .= " INNER JOIN author ON book.authorID = author.authorID ORDER BY author.authorName ";
-                }
-                
-                if($_GET['orderBy'] == "book") {
-                    $sql .= " WHERE 1 ORDER BY bookName ";
-                }
+            }
+            
+            if(!empty($_GET["bookName"])) {    //where 1 OR?
+                $bookName = $_GET["bookName"];
+                $sql .= " AND bookName LIKE '%$bookName%' ";
+            }
                 
                 //join the categoryID to category table
                 
@@ -86,24 +91,18 @@
                 //     $sql .= " ORDER BY category ";
                 // }
                 
+                $sql .= " ORDER BY bookName " ;
                 
-            }
-            
-            if($_GET["order"] == "asc") {
-                     $sql = "SELECT bookId, bookName, bookDescription FROM book ";
-                    $sql .= " ";
-                }
+                if($_GET["orderDesc"] == "desc") {
+                            $sql .= " DESC";
+                        }
+                // echo "<h1> $sql </h1>"; //for debugging purposes
                 
-                if($_GET["order"] == "desc") {
-                    $sql .= " DESC";
-                }
-            //echo $sql; //for debugging purposes
-            
-             $stmt = $conn->prepare($sql);
+                $stmt = $conn->prepare($sql);
              $stmt->execute();
              $records = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        
-        //pull before add
+             
+             //pull before add
         
         //when displayed, post book name: bookDescription
             foreach ($records as $record) { 
@@ -114,8 +113,18 @@
             
             }
         }
+            
+            
+            
+             
         
-    }
+        
+        }
+        
+//     SELECT * FROM `book` 
+// INNER JOIN category c ON book.categoryID = c.catID
+// INNER JOIN author a ON book.authorID = a.authorID
+// WHERE c.catID = 4 AND a.authorID = 7
 
     
 ?>
@@ -154,18 +163,9 @@
                   <?php displayAuthor(); ?> 
             </select>
              
-             
-             
-             
-             
-             
-             <p>Sort by: </p>
-             <input type="radio" name="sortBy" id = "author" value = "author"> <label>Author</label> <br>
-             <input type="radio" name="sortBy" id = "book" value = "book"> <label> Book</label> <br>
-             
              <p>Order by: </p>
-             <input type="radio" name="orderBy" id = "asc" value = "asc"> <label> A-Z</label> <br>
-             <input type="radio" name="orderBy" id = "desc" value = "desc"> <label> Z-A</label> <br>
+             <input type="radio" name="orderAsc" id = "asc" value = "asc"> <label> A-Z</label> <br>
+             <input type="radio" name="orderDesc" id = "desc" value = "desc"> <label> Z-A</label> <br>
              <!--<input type="radio" name="orderBy" id = "cat" value = "cat"> <label> Category</label> <br>-->
 
               
