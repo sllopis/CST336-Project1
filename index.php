@@ -141,6 +141,7 @@
     <body>
         
         <h1> CSUMB Library </h1>
+        <a href="cart.php"> Cart </a>
         
         <form method="GET">
         

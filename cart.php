@@ -64,7 +64,8 @@ if (isset($_POST["clearCart"])) {
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-	<h1> Shopping Cart </h1>
+    <h1><a href="index.php"> CSUMB Library </a></h1>
+	<h2> Shopping Cart </h2>
     <?php
     if (count($_SESSION["cart"]) > 0) {
     ?>
@@ -73,7 +74,7 @@ if (isset($_POST["clearCart"])) {
     </form>
 	<?php displayCart(); ?>
     <?php } else { ?>
-    <h2> Your shopping cart is empty </h2>
+    <h3> Your shopping cart is empty </h3>
     <?php } ?>
 </body>
 </html>
