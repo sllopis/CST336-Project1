@@ -1,6 +1,7 @@
 
 <?php
     
+    function displayInfo() {
     include 'dbConnection.php';
     $conn = getDatabaseConnection("Library");
 
@@ -33,7 +34,7 @@
     // if(sizeof($records) == 0) {
     //     echo "No purchase information found, please direct back and choose another item!";
     // }
-
+    }
  ?>
 
 <!DOCTYPE html>
