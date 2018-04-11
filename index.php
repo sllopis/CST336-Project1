@@ -140,6 +140,7 @@
 <html>
     <head>
         <title> CSUMB Library </title>
+        <link rel="stylesheet" href="css/styles.css">
     </head>
     <body>
         

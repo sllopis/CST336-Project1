@@ -1,13 +1,5 @@
 <?php
 session_start();
-/*
-include "dbConnection.php";
-$conn = getDatabaseConnection("ottermart");
-*/
-/*
-if (!isset($_GET["bookId"]))
-	header("Location: index.php");
-*/
 
 function getBook($id) {
 	global $conn;

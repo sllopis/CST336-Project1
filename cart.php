@@ -1,7 +1,7 @@
 <?php
 session_start();
 include "dbConnection.php";
-$conn = getDatabaseConnection("ottermart");
+$conn = getDatabaseConnection("Library");
 
 function getAuthor($book) {
 	global $conn;
@@ -72,6 +72,7 @@ if (isset($_POST["clearCart"])) {
     <form method="post">
         <input type="submit" name="clearCart" value="Clear cart">
     </form>
+    <br><br>
 	<?php displayCart(); ?>
     <?php } else { ?>
     <h3> Your shopping cart is empty </h3>
