@@ -64,10 +64,10 @@ if (isset($_POST["clearCart"])) {
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+	<h1> Shopping Cart </h1>
     <?php
     if (count($_SESSION["cart"]) > 0) {
     ?>
-	<h1> Shopping Cart </h1>
     <form method="post">
         <input type="submit" name="clearCart" value="Clear cart">
     </form>
