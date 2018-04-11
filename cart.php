@@ -30,7 +30,7 @@ function displayCart() {
 		echo "<td><img src='$img'></td>";
 		echo "<td><h3><mark>$title</mark></h3></td>";
 		echo "<td class='desc'>$desc</td>";
-		echo "<td><mark>authorName</mark>/td>";
+		echo "<td><mark>$authorName</mark></td>";
 		echo "<form method='post' id='updateForm$id'><input type='hidden' value='$id' name='changeQtyId'>" .
 			 "<td><input type='text' name='quantity' value='$qty'></td>" .
 			 "<td><button type='submit' form='updateForm$id'>Update</button></td></form>";
