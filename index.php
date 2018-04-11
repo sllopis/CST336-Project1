@@ -3,7 +3,7 @@
 
     include 'dbConnection.php';
     
-    $conn = getDatabaseConnection("tp");
+    $conn = getDatabaseConnection("library");
     include 'addCart.php';
     
     function displayAuthor(){
@@ -115,7 +115,7 @@
                  echo "<form method='post'><input type='hidden' name='bookId' value='" .
                     $record["bookID"] . "'><input type='submit' value='Add to cart' name='addBook'></form>";
                  //echo "<a href='addCart.php?bookId=" . $record["bookID"] . "'>Add to cart </a>";
-                 echo  "<strong>" . $record["authorName"] . " " . $record["bookName"] . ":</strong>" . " " . $record["bookDescription"] . "<br /> <br>";
+                 echo  "<a style='color:black; background-color:white;'>". $record["authorName"] . " <strong><br>" . $record["bookName"] . ":</strong>" . "" . $record["bookDescription"] . "</a><br /> <br>";
             
             }
         }

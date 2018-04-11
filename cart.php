@@ -1,7 +1,7 @@
 <?php
 session_start();
 include "dbConnection.php";
-$conn = getDatabaseConnection("Library");
+$conn = getDatabaseConnection("library");
 
 function getAuthor($book) {
 	global $conn;

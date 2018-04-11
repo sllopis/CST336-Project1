@@ -3,7 +3,7 @@
     
     function displayInfo() {
     include 'dbConnection.php';
-    $conn = getDatabaseConnection("Library");
+    $conn = getDatabaseConnection("library");
 
     $productId = $_GET['bookId'];
 
