@@ -168,9 +168,9 @@
             </select>
              
              <p>Order by: </p>
-             <input <?= isset($_GET["orderBy"] == "asc") ? "checked" : ""; ?> 
+             <input <?= $_GET["orderBy"] == "asc" ? "checked" : ""; ?> 
                 type="radio" name="orderBy" id = "asc" value = "asc"> <label for="asc"> A-Z</label> <br>
-             <input <?= isset($_GET["orderBy"] == "desc") ? "checked" : ""; ?> 
+             <input <?= $_GET["orderBy"] == "desc" ? "checked" : ""; ?> 
                  type="radio" name="orderBy" id = "desc" value = "desc"> <label for="desc"> Z-A</label> <br>
              <!--<input type="radio" name="orderBy" id = "cat" value = "cat"> <label> Category</label> <br>-->
 
