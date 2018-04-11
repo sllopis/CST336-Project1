@@ -41,7 +41,7 @@ function displayCart() {
 	echo "</table>";
 }
 
-if (isset($_POST["removeId"])
+if (isset($_POST["removeId"]))
 	foreach ($_SESSION["cart"] as $key => $book)
 		if ($book["bookID"] == $_POST["removeId"])
 			unset($_SESSION["cart"][$key]);
