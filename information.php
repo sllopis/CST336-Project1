@@ -1,6 +1,7 @@
 
 <?php
     
+    function displayInfo() {
     include 'dbConnection.php';
     $conn = getDatabaseConnection("tp");
 
@@ -32,7 +33,7 @@
     // if(sizeof($records) == 0) {
     //     echo "No purchase information found, please direct back and choose another item!";
     // }
-
+    }
  ?>
 
 <!DOCTYPE html>
@@ -43,6 +44,7 @@
         <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
     </head>
     <body>
-
+        <h1><a href="index.php"> CSUMB Library </a>
+        <?php displayInfo(); ?>
     </body>
 </html>
