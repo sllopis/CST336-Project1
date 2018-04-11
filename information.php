@@ -2,7 +2,7 @@
 <?php
     
     include 'dbConnection.php';
-    $conn = getDatabaseConnection("tp");
+    $conn = getDatabaseConnection("Library");
 
     $productId = $_GET['bookId'];
 
@@ -21,13 +21,14 @@
     //title, description, author, category
         
         // echo $record['bookName'] . "<br>";
-        echo "<img src='" . $record['bookImage'] . "' width = '200' /><br/>";
-        echo "Title: " . $record["bookName"] . "<br />";
-        echo "Book Description: " . $record["bookDescription"] . "<br />";
-        echo "Author: " . $record["authorName"] . "<br />";       //how to get author name?
-        echo "Category: " . $record["catName"] . "<br />";
-        echo "Category Description: " . $record["catDescription"] . "<br />";
-    
+        
+        echo "<img src='" . $record['bookImage'] . "' width = '200' /></p><br>";
+        echo "<p>Title: " . $record["bookName"] . "</p><br />";
+        echo "<p>Book Description: " . $record["bookDescription"] . "</p><br />";
+        echo "<p>Author: " . $record["authorName"] . "</p><br />";       //how to get author name?
+        echo "<p>Category: " . $record["catName"] . "</p><br />";
+        echo "<p>Category Description: " . $record["catDescription"] . "</p><br />";
+        
     
     // if(sizeof($records) == 0) {
     //     echo "No purchase information found, please direct back and choose another item!";

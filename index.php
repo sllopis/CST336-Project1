@@ -3,7 +3,7 @@
 
     include 'dbConnection.php';
     
-    $conn = getDatabaseConnection("tp");
+    $conn = getDatabaseConnection("Library");
     
     function displayAuthor(){
         global $conn;
@@ -137,6 +137,7 @@
 <html>
     <head>
         <title> CSUMB Library </title>
+        <link rel="stylesheet" href="css/styles.css">
     </head>
     <body>
         

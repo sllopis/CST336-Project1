@@ -1,7 +1,7 @@
 <?php
 session_start();
 include "dbConnection.php";
-$conn = getDatabaseConnection("ottermart");
+$conn = getDatabaseConnection("Library");
 
 if (!isset($_GET["bookId"]))
 	header("Location: index.php");

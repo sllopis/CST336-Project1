@@ -5,13 +5,15 @@ head, body, footer{
 }
 
 body {
-    background-color: green;
+    /*background-color: green;*/
     font-family: 'Merriweather', serif;
     /*font-family: 'Jua', sans-serif;*/
     background-image:url("../img/library.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position:center; 
+    padding-right:220px;
+    padding-left: 220px;
 
 }
 
@@ -23,11 +25,10 @@ label{
 }
 
 img{
-   background-color: white;
    width: 200px;
 }
 .desc{
-    background-color: white;
+
     width: 400px;
     height:150px;
 }
@@ -42,7 +43,9 @@ h1{
     font-weight: 900px;
 }
 
+
 th{
+    background-color: Yellow;
     font-size: 30px;
     font-weight:900;
 }
@@ -56,6 +59,11 @@ td {
 
 #bookCat,#bookAuthor{
     width: 10%;
+}
+
+p{
+    text-align: center;
+    font-weight: 900;
 }
 
 /*table h3{
