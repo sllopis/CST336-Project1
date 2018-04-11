@@ -1,10 +1,13 @@
 <?php
 session_start();
+/*
 include "dbConnection.php";
 $conn = getDatabaseConnection("ottermart");
-
+*/
+/*
 if (!isset($_GET["bookId"]))
 	header("Location: index.php");
+*/
 
 function getBook($id) {
 	global $conn;
@@ -15,7 +18,10 @@ function getBook($id) {
 	return $stmt->fetch(PDO::FETCH_ASSOC);
 }
 
-function addBook($book) {
+function addBook() {
+    $book = getBook($_POST["bookId"]);
+    if (!isset($_SESSION["cart"]))
+        $_SESSION["cart"] = array();
 	foreach ($_SESSION["cart"] as $key => $b) {
 		if ($b["bookID"] == $book["bookID"]) {
 			$_SESSION["cart"][$key]["quantity"]++;
@@ -26,10 +32,8 @@ function addBook($book) {
 	$_SESSION["cart"][] = $book;
 }
 
-$book = getBook($_GET["bookId"]);
-if (!isset($_SESSION["cart"]))
-	$_SESSION["cart"] = array();
-
-addBook($book);
-header("Location: index.php");
+if (isset($_POST["addBook"]))
+    addBook();
+//addBook($book);
+//header("Location: index.php");
 ?>

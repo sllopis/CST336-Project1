@@ -2,6 +2,7 @@
 <?php
 
     include 'dbConnection.php';
+    include 'addCart.php';
     
     $conn = getDatabaseConnection("tp");
     
@@ -111,7 +112,9 @@
                 //add category //add 
                 // <a href = "\information.php?bookId=1> </a>"?
                  echo "<a href =\"information.php?bookId=" . $record["bookID"] . "\"> Info</a> ";
-                 echo "<a href='addCart.php?bookId=" . $record["bookID"] . "'>Add to cart </a>";
+                 echo "<form method='post'><input type='hidden' name='bookId' value='" .
+                    $record["bookID"] . "'><input type='submit' value='Add to cart' name='addBook'></form>";
+                 //echo "<a href='addCart.php?bookId=" . $record["bookID"] . "'>Add to cart </a>";
                  echo  "<strong>" . $record["authorName"] . " " . $record["bookName"] . ":</strong>" . " " . $record["bookDescription"] . "<br /> <br>";
             
             }
