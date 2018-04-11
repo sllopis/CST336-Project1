@@ -18,7 +18,8 @@
         
         foreach ($records as $record) {
             
-            echo "<option value='".$record["authorID"]."' >" . $record["authorName"] . "</option>";
+            echo "<option " . ($_GET["bookAuthor"] == $record["authorID"] ? "selected" : "") .
+            " value='".$record["authorID"]."' >" . $record["authorName"] . "</option>";
             
         }
         
@@ -37,7 +38,8 @@
         
         foreach ($records as $record) {
             
-            echo "<option value='".$record["catId"]."' >" . $record["catName"] . "</option>";
+            echo "<option " . ($_GET["bookCategory"] == $record["catId"] ? "selected" : "") .
+             " value='".$record["catId"]."' >" . $record["catName"] . "</option>";
             
         }
         
@@ -93,7 +95,7 @@
                 
                 $sql .= " ORDER BY bookName " ;
                 
-                if($_GET["orderDesc"] == "desc") {
+                if($_GET["orderBy"] == "desc") {
                             $sql .= " DESC";
                         }
                 // echo "<h1> $sql </h1>"; //for debugging purposes
@@ -108,7 +110,8 @@
             foreach ($records as $record) { 
                 //add category //add 
                 // <a href = "\information.php?bookId=1> </a>"?
-                 echo "<a href =\"information.php?bookId=" . $record["bookId"] . "\"> Info </a>";
+                 echo "<a href =\"information.php?bookId=" . $record["bookID"] . "\"> Info</a> ";
+                 echo "<a href='addCart.php?bookId=" . $record["bookID"] . "'>Add to cart </a>";
                  echo  "<strong>" . $record["authorName"] . " " . $record["bookName"] . ":</strong>" . " " . $record["bookDescription"] . "<br /> <br>";
             
             }
@@ -138,11 +141,13 @@
     <body>
         
         <h1> CSUMB Library </h1>
+        <a href="cart.php"> Cart </a>
         
         <form method="GET">
         
             <label for="bookName">Name: </label>
-            <input type="text" name="bookName" id="bookName" placeholder="Search Book Title">
+            <input type="text" name="bookName" id="bookName" placeholder="Search Book Title"
+                value="<?= $_GET["bookName"] ?>">
             
             <br>
                 
@@ -164,8 +169,10 @@
             </select>
              
              <p>Order by: </p>
-             <input type="radio" name="orderAsc" id = "asc" value = "asc"> <label> A-Z</label> <br>
-             <input type="radio" name="orderDesc" id = "desc" value = "desc"> <label> Z-A</label> <br>
+             <input <?= $_GET["orderBy"] == "asc" ? "checked" : ""; ?> 
+                type="radio" name="orderBy" id = "asc" value = "asc"> <label for="asc"> A-Z</label> <br>
+             <input <?= $_GET["orderBy"] == "desc" ? "checked" : ""; ?> 
+                 type="radio" name="orderBy" id = "desc" value = "desc"> <label for="desc"> Z-A</label> <br>
              <!--<input type="radio" name="orderBy" id = "cat" value = "cat"> <label> Category</label> <br>-->
 
               
