@@ -44,6 +44,7 @@
         <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
     </head>
     <body>
-
+        <h1><a href="index.php"> CSUMB Library </a></h1>
+        <?php displayInfo(); ?>
     </body>
 </html>
