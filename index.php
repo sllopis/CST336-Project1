@@ -185,10 +185,10 @@
             <br>
             
             <input type="submit" name="searchButton" value="Search"/> 
+        </form>
             <?= displaySearchResults(); ?>
             
             
-        </form>
 
     </body>
 </html>
