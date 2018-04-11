@@ -1,15 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Merriweather');
 /* @import url('https://fonts.googleapis.com/css?family=Jua');*/
-head, body{
+head, body, footer{
     text-align:center;
-    
 }
 
 body {
     background-color: green;
     font-family: 'Merriweather', serif;
     /*font-family: 'Jua', sans-serif;*/
-
+    background-image:url("../img/library.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position:center; 
 
 }
 
@@ -26,13 +28,35 @@ img{
 }
 .desc{
     background-color: white;
-}
-#TName{
-    
-    font-weight:500;
-    
+    width: 400px;
+    height:150px;
 }
 
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+h1{
+    font-size: 50px;
+    font-weight: 900px;
+}
+
+th{
+    font-size: 30px;
+    font-weight:900;
+}
+ th, td {
+    border-bottom: 5px solid #ddd;
+}
+td {
+    font-size: 20px;
+}
+
+
+#bookCat,#bookAuthor{
+    width: 10%;
+}
 
 /*table h3{
     background-color: yellow;
