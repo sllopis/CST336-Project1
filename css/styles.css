@@ -14,7 +14,8 @@ body {
 }
 
 label{
-    font-size: 22px;
+    font-size: 30px;
+    font-weight: 900;
     margin: 20px;
     line-height: 200%;
 }
@@ -25,6 +26,11 @@ img{
 }
 .desc{
     background-color: white;
+}
+#TName{
+    
+    font-weight:500;
+    
 }
 
 
