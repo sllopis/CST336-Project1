@@ -31,4 +31,5 @@ if (!isset($_SESSION["cart"]))
 	$_SESSION["cart"] = array();
 
 addBook($book);
+header("Location: index.php");
 ?>

@@ -28,9 +28,9 @@ function displayCart() {
 
 		echo "<tr>";
 		echo "<td><img src='$img'></td>";
-		echo "<td><h3>$title</h3></td>";
-		echo "<td>$desc</td>";
-		echo "<td>$authorName</td>";
+		echo "<td><h3><mark>$title</mark></h3></td>";
+		echo "<td class='desc'>$desc</td>";
+		echo "<td><mark>authorName</mark>/td>";
 		echo "<form method='post' id='updateForm$id'><input type='hidden' value='$id' name='changeQtyId'>" .
 			 "<td><input type='text' name='quantity' value='$qty'></td>" .
 			 "<td><button type='submit' form='updateForm$id'>Update</button></td></form>";
@@ -41,7 +41,7 @@ function displayCart() {
 	echo "</table>";
 }
 
-if (isset($_POST["removeId"]))
+if (isset($_POST["removeId"])
 	foreach ($_SESSION["cart"] as $key => $book)
 		if ($book["bookID"] == $_POST["removeId"])
 			unset($_SESSION["cart"][$key]);
@@ -51,15 +51,23 @@ if (isset($_POST["changeQtyId"]))
 		if ($book["bookID"] == $_POST["changeQtyId"])
 			$_SESSION["cart"][$key]["quantity"] = $_POST["quantity"];
 
+if (isset($_POST["clearCart"])) {
+    $_SESSION["cart"] = array();
+}
+
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
 	<title> Shopping Cart </title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 	<h1> Shopping Cart </h1>
+    <form method="post">
+        <input type="submit" name="clearCart" value="Clear cart">
+    </form>
 	<?php displayCart(); ?>
 </body>
 </html>
