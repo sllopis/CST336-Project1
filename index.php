@@ -2,9 +2,9 @@
 <?php
 
     include 'dbConnection.php';
-    include 'addCart.php';
     
     $conn = getDatabaseConnection("tp");
+    include 'addCart.php';
     
     function displayAuthor(){
         global $conn;
